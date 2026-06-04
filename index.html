@@ -37,18 +37,9 @@
 </head>
 <body class="flex flex-col min-h-screen text-slate-800">
 
-    <audio id="bgm" loop>
-        <source src="https://drive.google.com/uc?export=download&id=1PMA80DZ084fgH6D7OVuisN4C-7QUeTFJ" type="audio/mpeg">
-        เบราว์เซอร์ของคุณไม่รองรับการเล่นไฟล์เสียง
-    </audio>
-
     <header class="relative bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 text-white p-8 md:p-12 text-center shadow-lg rounded-b-[3rem] mx-2 mt-2 overflow-hidden">
         
         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20px 20px, white 2px, transparent 0); background-size: 40px 40px;"></div>
-
-        <button onclick="toggleAudio()" class="absolute top-4 right-4 md:top-6 md:right-6 bg-white/20 hover:bg-white/40 p-3 md:p-4 rounded-full backdrop-blur-sm transition-all duration-300 shadow-md flex items-center justify-center z-10">
-            <span id="audio-icon" class="text-xl md:text-2xl" title="เปิด/ปิดเสียง">🔇</span>
-        </button>
 
         <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
             <img src="https://lh5.googleusercontent.com/d/11lT0KghZEJcvK8GjV_IHeB3Xz8HqXjNj" 
@@ -71,7 +62,7 @@
     <main class="flex-grow container mx-auto px-4 py-12 max-w-4xl flex flex-col items-center">
         
         <div class="mb-12 w-56 h-56 md:w-72 md:h-72 flex justify-center items-center">
-            <img src="https://gorpor.github.io/ry2-robotic2026/ry2robotics.png" 
+            <img src="https://drive.google.com/uc?export=view&id=1Ubw2hk2rXdN4LYfTGjNaTY71f3jUy7uV" 
                  onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffedd5/f97316?text=Mascot';"
                  alt="Mascot หุ่นยนต์ สพป.ระยอง เขต 2" 
                  class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500 drop-shadow-2xl animate-float">
@@ -166,34 +157,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        const audio = document.getElementById('bgm');
-        const audioIcon = document.getElementById('audio-icon');
-        let isPlaying = false;
-
-        function toggleAudio() {
-            if (isPlaying) {
-                audio.pause();
-                audioIcon.textContent = '🔇';
-                audioIcon.parentElement.classList.remove('bg-orange-500/80');
-                audioIcon.parentElement.classList.add('bg-white/20');
-            } else {
-                const playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(_ => {
-                        audioIcon.textContent = '🔊';
-                        audioIcon.parentElement.classList.remove('bg-white/20');
-                        audioIcon.parentElement.classList.add('bg-orange-500/80');
-                        isPlaying = true;
-                    })
-                    .catch(error => {
-                        console.error("ไม่สามารถเล่นเสียงได้:", error);
-                        alert("กรุณาคลิกที่หน้าเว็บหนึ่งครั้งก่อนเพื่อให้เบราว์เซอร์อนุญาตให้เล่นเสียงครับ");
-                    });
-                }
-            }
-        }
-    </script>
 </body>
 </html>
