@@ -247,7 +247,7 @@
                             <th scope="col" class="px-6 py-4 rounded-tl-xl">ลำดับ</th>
                             <th scope="col" class="px-6 py-4">วัน-เวลาที่ลงทะเบียน</th>
                             <th scope="col" class="px-6 py-4">ชื่อโรงเรียน</th>
-                            <th scope="col" class="px-6 py-4">ชื่อทีม</th>
+                            <th scope="col" class="px-6 py-4">เครือข่ายการศึกษา</th>
                             <th scope="col" class="px-6 py-4">ประเภทที่แข่งขัน</th>
                             <th scope="col" class="px-6 py-4 rounded-tr-xl text-center">สถานะ</th>
                         </tr>
@@ -366,7 +366,7 @@
                                 id: index + 1,
                                 timestamp: row[timestampCol] || "ไม่มีข้อมูลเวลา",
                                 school: row["ชื่อโรงเรียน"] || row["โรงเรียน"] || "ไม่ระบุชื่อโรงเรียน",
-                                teamName: row["ชื่อทีม"] || row["ชื่อทีมการแข่งขัน"] || "ไม่ระบุชื่อทีม",
+                                network: row["เครือข่ายการศึกษา"] || row["เครือข่าย"] || "ไม่ระบุเครือข่าย",
                                 category: source.category,
                                 status: "สมบูรณ์" 
                             };
@@ -454,7 +454,7 @@
                             <td class="px-6 py-4 font-medium text-gray-900">${index + 1}</td>
                             <td class="px-6 py-4">${item.timestamp}</td>
                             <td class="px-6 py-4 font-semibold text-brand-700 group-hover:text-brand-600">${item.school}</td>
-                            <td class="px-6 py-4">${item.teamName}</td>
+                            <td class="px-6 py-4">${item.network}</td>
                             <td class="px-6 py-4">${getCategoryBadge(item.category)}</td>
                             <td class="px-6 py-4 text-center">${getStatusBadge(item.status)}</td>
                         </tr>
